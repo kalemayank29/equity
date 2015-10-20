@@ -1,9 +1,8 @@
-
-m django.shortcuts import render
+from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 
 from django.contrib.auth import authenticate, login, logout
-from mysite import settings
+from equity import settings
 from django.contrib.auth.decorators import login_required
 
 def index(request):
