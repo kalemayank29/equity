@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^logout/$', views.Logout),
     url(r'^home/$', views.Home),
     url(r'^mylist/$', views.Mylist),
+    url(r'^stocks/$', include('stocklist.urls')),
 ]

@@ -1,0 +1,22 @@
+{% if stock_list %}
+<table border="1px">
+    <tr>
+        <td> TICKR </td>
+        <td> PRICE </td>
+        <td> PE RATION </td>
+        <td> EARNINGS PER SHARE </td>
+        <td> VOLUME </td>
+    </tr>
+    {% for stock in stock_list %}
+      <tr>
+        <td>{{ stock.tickr }}</td>
+        <td>{{ stock.price }}</td>
+        <td>{{ stock.pe }}</td>
+        <td>{{ stock.eps }}</td>
+        <td>{{ stock.volume }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}

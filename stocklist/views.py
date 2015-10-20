@@ -5,7 +5,9 @@ from stocklist.models import Stock
 # Create your views here.
 def index(request):
     stock_list = Stock.objects.all()
-    output = ', '.join([p.tickr for p in stock_list])
-    return HttpResponse(output)
+    #output = ', '.join([p.tickr for p in stock_list])
+    #return HttpResponse(output)
+    context = {'stock_list': stock_list}
+    return render(request, 'stocks.html', context)
 
     #return HttpResponse("<h1> Welcome to Equity </h1>")
