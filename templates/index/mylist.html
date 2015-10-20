@@ -1,0 +1,10 @@
+<h1>My List</h1>
+
+<p>These are my favorite stocks.</p>
+
+<a href="/home/">Home</a>
+{% if user.is_authenticated %}
+    <a href="/logout/">Logout</a>
+{% else %}
+    <a href="/login/?next={{ request.path }}">Login</a>
+{% endif %}
