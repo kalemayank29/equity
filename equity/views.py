@@ -37,3 +37,5 @@ def Home(request):
 def Mylist(request):
 	return render(request, "index/mylist.html", {})
 
+def Stocks(request):
+	return render(request, "index/stocks.html", {})
