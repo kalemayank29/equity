@@ -29,9 +29,8 @@ def add_stock(request):
 
 def delete_stock(request):
 	tickr_name = request.POST['dtickr_name']
-	p = Pick.objects.all()
-	for obj in p:
-		obj.delete()
+	obj = Pick.objects.get(tickr=tickr_name)
+	obj.delete()
 	return HttpResponseRedirect('/picks')
 
 
