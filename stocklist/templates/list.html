@@ -6,7 +6,8 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<h1> <center> My Stock Picks </h1>
+ <h3 style="margin-left:50px"> <a href="/home/"> Home </a><h3>
+<h1 > <center> My Stock Picks </h1>
   <form action="/add_stock/" method="post"> {% csrf_token %}
       <input id="tickr_name" type="text" name="tickr_name">
       <input type="submit" value="Add">
