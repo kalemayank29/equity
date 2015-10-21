@@ -1,10 +1,21 @@
-<h1>Home</h1>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<p>This is home.</p>
 
-<a href="/mylist/">Mylist</a>
+<center> <h1><u>Home</u></h1> </center>
+
+
+<h2><center>
+  <a href="/picks/">Mylist</a><br>
+  <a href="/stocks/">All Stocks</a><br>
+  <a href="/stockrefresh/">Refresh stocks</a><br>
 {% if user.is_authenticated %}
     <a href="/logout/">Logout</a>
 {% else %}
+</center></h2>
     <a href="/login/?next={{ request.path }}">Login</a>
 {% endif %}

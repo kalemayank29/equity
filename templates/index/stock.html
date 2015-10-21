@@ -1,0 +1,14 @@
+<h1>{{tickr_name}}</h1>
+
+<form action="/add_stock/" method="post">
+    {% csrf_token %}
+    <input value="{{ tickr_name }}" type="hidden" name="tickr_name">
+    <input type="submit" value="Add">
+</form>
+
+<a href="/home/">Home</a>
+{% if user.is_authenticated %}
+    <a href="/logout/">Logout</a>
+{% else %}
+    <a href="/login/?next={{ request.path }}">Login</a>
+{% endif %}

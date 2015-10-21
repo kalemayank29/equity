@@ -2,6 +2,12 @@
 
 <p>These are my favorite stocks.</p>
 
+<form action="/get_tickr/" method="post"> {% csrf_token %}
+    <label for="tickr_name">TICKR </label>
+    <input id="tickr_name" type="text" name="tickr_name">
+    <input type="submit" value="Search">
+</form>
+
 <a href="/home/">Home</a>
 {% if user.is_authenticated %}
     <a href="/logout/">Logout</a>

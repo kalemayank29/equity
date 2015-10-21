@@ -1,3 +1,4 @@
+<body style="background-color:#F2F2F2;">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <!-- Optional theme -->
@@ -5,25 +6,27 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<h1> <center> All Stocks </center> </h1>
-
-{% if stock_list %}
+<h1> <center> My Stock Picks </h1>
+  <form action="/add_stock/" method="post"> {% csrf_token %}
+      <input id="tickr_name" type="text" name="tickr_name">
+      <input type="submit" value="Add">
+  </form>
+</center>
+{% if pick_list %}
 <table class="table table-hover table-bordered table-responsive">
 
     <tr class="success">
+        <td> <b>UID</b> </td>
         <td> <b>TICKR</b> </td>
-        <td> <b>PRICE </b></td>
-        <td> <b>PE RATION</b> </td>
-        <td> <b>EARNINGS PER SHARE</b> </td>
-        <td> <b>VOLUME </b></td>
+        <td> <b>PRICE</b> </td>
+        <td> <b>DATE</b> </td>
     </tr>
-    {% for stock in stock_list %}
+    {% for pick in pick_list %}
       <tr>
-        <td>{{ stock.tickr }}</td>
-        <td>{{ stock.price }}</td>
-        <td>{{ stock.pe }}</td>
-        <td>{{ stock.eps }}</td>
-        <td>{{ stock.volume }}</td>
+        <td>{{ pick.uid }}</td>
+        <td>{{ pick.tickr }}</td>
+        <td>{{ pick.price }}</td>
+        <td>{{ pick.date }}</td>
       </tr>
     {% endfor %}
   </table>

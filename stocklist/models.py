@@ -13,7 +13,7 @@ class Stock(models.Model):
 
 
 class Pick(models.Model):
-    uid = models.IntegerField(unique=True)
+    uid = models.IntegerField()
     tickr = models.CharField(max_length=200)
     price = models.IntegerField()
     date = models.IntegerField()
