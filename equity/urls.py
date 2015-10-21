@@ -19,6 +19,7 @@ from stocklist.views import picks, refresh
 from . import views
 
 urlpatterns = [
+    url(r'^$', views.Home, name='index'),
     url(r'^admin/$', include(admin.site.urls)),
     url(r'^login/$', views.Login),
     url(r'^logout/$', views.Logout),
@@ -26,6 +27,7 @@ urlpatterns = [
     url(r'^mylist/$', views.Mylist),
     url(r'^get_tickr/$', views.get_tickr),
     url(r'^add_stock/$', views.add_stock),
+    url(r'^delete_stock/$', views.delete_stock),
     url(r'^stocks/$', include('stocklist.urls')),
     url(r'^picks/$', picks),
     url(r'^stockrefresh/$', refresh),

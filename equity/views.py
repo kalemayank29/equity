@@ -25,7 +25,14 @@ def add_stock(request):
 	stock = Stock.objects.get(tickr = tickr_name)
 	x = Pick(uid=4,tickr=tickr_name,price=stock.price,date=102)
 	x.save()
-	return render(request,"index/home.html")
+	return HttpResponseRedirect('/picks')
+
+def delete_stock(request):
+	tickr_name = request.POST['dtickr_name']
+	p = Pick.objects.all()
+	for obj in p:
+		obj.delete()
+	return HttpResponseRedirect('/picks')
 
 
 def Login(request):

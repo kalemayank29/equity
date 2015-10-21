@@ -10,6 +10,11 @@
   <form action="/add_stock/" method="post"> {% csrf_token %}
       <input id="tickr_name" type="text" name="tickr_name">
       <input type="submit" value="Add">
+  </form><br>
+
+  <form action="/delete_stock/" method="post"> {% csrf_token %}
+      <input id="dtickr_name" type="text" name="dtickr_name">
+      <input type="submit" value="Delete">
   </form>
 </center>
 {% if pick_list %}
