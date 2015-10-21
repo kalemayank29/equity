@@ -1,6 +1,12 @@
+
+<body style="height: 100%;
+    background: linear-gradient(90deg, black 50%, white 50%);">
+
 <form method="post" action=".?next={{ redirect_to }}"> {% csrf_token %}
     <input type="text" name="username" placeholder="Username"/>
     <input type="password" name="password" placeholder="Password"/>
 
     <input type="submit" value="Login"/>
 </form>
+{% load staticfiles %}
+<center><img src="http://s30.postimg.org/gynegodup/logo.png" height="65%" style="margin-left:-10px"/></center>
